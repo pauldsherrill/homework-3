@@ -14,7 +14,7 @@ My last task was to randomly choose one of the employees. I did so by using the 
 
 ## Usage
 
-To access the webpage visit 
+To access the webpage visit https://pauldsherrill.github.io/homework-3/
 
 Once you arrive, you will see a blank table and a button that says "Add Employee". 
 
