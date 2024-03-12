@@ -18,17 +18,17 @@ To access the webpage visit
 
 Once you arrive, you will see a blank table and a button that says "Add Employee". 
 
-![alt text](/assets/opening.png)
+![alt text](/Assets/opening.png)
 
 By clicking this button, you will be prompted with an area to fill out an employee's first name. After clicking submit, a new prompt will give you the option to fill out the employee's last name. Likewise when you click submit, you will be promted with an area to fill out the employee's salary. After submitting once again, you will be given the option to add another employee or cancel. 
 
-![alt text](/assets/prompt.png)
+![alt text](/Assets/prompt.png)
 
 Adding another employee will repeat these prompts and cancelling will return you to the page with the table filled out with the informtaion you just inputted. 
 
-![alt text](/assets/tablefilled.png)
+![alt text](/Assets/tablefilled.png)
 
 To view the average salary and random employee chosen, right click and inspect the page. There you will see that logged into the console. 
 
-![alt text](/assets/console.png)
+![alt text](/Assets/console.png)
 
