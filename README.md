@@ -1,125 +1,34 @@
-# 03 JavaScript: Employee Payroll Tracker
+# Employee Payroll Tracker
 
-## Your Task
+## Description
 
-This week's Challenge requires you to modify starter code to create an application that enables a payroll manager to view and manage employee payroll data. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+In this project, I was tasked with implementing Javascript code into a JS file so that the user would be prompted with options to add information about employees. From that information, I was tasked with creating an array with the objects the user inputted. From there, I was tasked with calculating abd displaying the average salary out of the inputted salaries of the employees and also choosing one of the employees at random.
 
-## User Story
+## Installation
 
-```md
-AS A payroll manager
-I WANT AN employee payroll tracker
-SO THAT I can see my employees' payroll data and properly budget for the company
-```
+To install my code, I opened a given Javascript file that had starter code installed already. After viewing the code, I realized all I needed to do was add code to prompt the user for employee information, create an array with that information, calculate an average out of the array, and then choose a random out of that array as well. To start, I added a const called "employee" with three different categories: first name, last name, salary. All of these values were left blank so that the user input would replace it. I then added another const called "employees" to store multiple employees into one array. I then implemented prompts for each of the different categories under the employee variable so that the user would be asked to fill in employee information after clicking "Add Employee". I then added the .push command to push that inputted information into one array (employees). I then added an if statement so that if a user inputted anything other than a number for the salary prompt, it would display a 0. In order for the user to add multiple employees, I had to create a while loop so that the following code would run until the user didn't confirm that they wanted to add another employee. In that while loop I just copied and pasted all my previous code so that it would be repeated the exact same way. I then returned the array.
 
-## Acceptance Criteria
+Now that I had created an array of employees, I now needed to calculate the average salary of those inputted salaries and display it into the console. I started by creating a function and addimng a sum that was equal to 0 in it. Next, I added a for loop with an integer(i) that added the sum to the total sum of salaries. To calculate the average, I divided the sum by the length of array of salaries. I then logged that number into the console for it to be displayed.
 
-```md
-GIVEN an employee payroll tracker
-WHEN I click the "Add employee" button
-THEN I am presented with a series of prompts asking for first name, last name, and salary
-WHEN I finish adding an employee
-THEN I am prompted to continue or cancel
-WHEN I choose to continue
-THEN I am prompted to add a new employee
-WHEN I choose to cancel
-THEN my employee data is displayed on the page sorted alphabetically by last name, and the console shows computed and aggregated data
-```
+My last task was to randomly choose one of the employees. I did so by using the Math.random command to choose a random number between 0 and 1 to multiply to the length of my arrays. However, this wasn't working because it would not always calculate a whole number. Therefore, I used the Math.floor command to round these numbers down and make them whole integers. I then logged this into the console and it worked.
 
-## Mock-Up
+## Usage
 
-The following images show the web application's appearance and functionality:
+To access the webpage visit file:///C:/Users/sherr/repo/homework-3
 
-![Animation shows input of employees to an employee payroll tracker.](./Assets/03-javascript-homework-demo.gif)
+Once you arrive, you will see a blank table and a button that says "Add Employee". 
 
-![Shows employee information in the console of an employee payroll tracker.](./Assets/03-javascript-homework-console-demo.png)
+![alt text](assets/opening.png)
 
-## Getting Started
+By clicking this button, you will be prompted with an area to fill out an employee's first name. After clicking submit, a new prompt will give you the option to fill out the employee's last name. Likewise when you click submit, you will be promted with an area to fill out the employee's salary. After submitting once again, you will be given the option to add another employee or cancel. 
 
-You will be responsible for filling out the following functions:
+![alt text](assets/prompt.png)
 
-* `collectEmployees`: This function will allow a user to add multiple employees to display on the page.  The user will need to enter the first name, last name, and salary of each employee, then have the option to keep adding employees until they choose to stop. A `while` loop will be needed here ([MDN Web Docs on `while` loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)) The salary will need to be entered as a number, otherwise it should default to $0.  The `isNaN` function can help with this: ([MDN Web Docs on isNaN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN)) This function should return an array of objects, like the following example.  Reference the [MDN Web Docs on return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return):
+Adding another employee will repeat these prompts and cancelling will return you to the page with the table filled out with the informtaion you just inputted. 
 
-```javascript
-    [
-        {
-            firstName:"John",
-            lastName:"Smith",
-            salary:12345
-        },
-        {
-            firstName:"Jane",
-            lastName:"Doe",
-            salary:54321
-        }
-    ]
-```
+![alt text](assets/tablefilled.png)
 
-* `displayAverageSalary`: This function will take in the generated array of employees and log the average salary and number of employees to the console.  You should use a template literal string for this task.
+To view the average salary and random employee chosen, right click and inspect the page. There you will see that logged into the console. 
 
-* `getRandomEmployee`: This function will take in the generated array of employees, randomly select one employee, and use a template literal to log their full name to the console.  The built in `Math` object can help with random number generation: ([MDN Web Docs on `Math.random`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random))
+![alt text](assets/console.png)
 
-The provided starter code includes the `displayEmployees` and `trackEmployeeData` functions. These functions are complete and working. You do not have to modify any code for the following functions:
-
-* `displayEmployees`: This function will take in an array of employees and render each employee to an HTML table.
-
-* `trackEmployeeData`: This function will execute when the "Add Employees" button is clicked. It will take the array generated in your `collectEmployees` function, sort the employees by last name, and place them on a table on the page using the provided `displayEmployees` function.  Additionally, the function will execute the `displayAverageSalary` function to log the average employee salary to the console, and execute the `getRandomEmployee` function to log a random employees information to the console.
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
-- - -
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

@@ -3,17 +3,70 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
+  const employee = {
+    firstName: "",
+    lastName: "",
+    salary: 0
+  }
+
+  const employees = [];
+
+  employee.firstName = prompt("Enter first name:");
+  employee.lastName = prompt("Enter last name:");
+  employee.salary = prompt("Enter salary:");
+
+  // Display non-numbers as 0
+  if (isNaN(employee.salary)) {
+    employee.salary = 0;
+  } else {
+    employee.salary = parseInt(employee.salary);
+  }
+
+  employees.push(employee);
+
+  while (confirm("Would you like to add another employee?")) {
+    const employee = {
+      firstName: "",
+      lastName: "",
+      salary: 0
+    }
+
+    employee.firstName = prompt("Enter first name:");
+    employee.lastName = prompt("Enter last name:");
+    employee.salary = prompt("Enter salary:");
+
+    if (!isNaN(employee.salary) < 0) {
+      employee.salary = 0;
+    } else {
+      employee.salary = parseInt(employee.salary);
+    }
+  
+    employees.push(employee);
+  }
+
+  return employees;
 }
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
+const displayAverageSalary = function(collectEmployees) {
+    let sum = 0;
+    console.log(collectEmployees);
+
+    // Calculate the sum
+    for (let i = 0; i < collectEmployees.length; i++) {
+      sum += collectEmployees[i].salary
+    }
+    // Calculate the average
+    let average = sum / collectEmployees.length;
+
+    console.log("The average salary of our employees is $" + average);
 }
 
 // Select a random employee
-const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
+const getRandomEmployee = function(collectEmployees) {
+  let randomNumber = Math.random() * collectEmployees.length;
+  let randomInteger = Math.floor(randomNumber);
+  console.log("Congratulations, " + collectEmployees[randomInteger].firstName + ", our random drawing winner!");
 }
 
 /*
